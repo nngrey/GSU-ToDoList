@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>To Do</title>
+        <link rel="stylesheet" type="text/css" href="todo.css"/>
+        <script src="jquery.js"></script>
+        <script>
+        	$(document).ready(function(){
+				$('#button').click(function(){
+					var toAdd = $('input[name=checkListItem]').val();
+					$('.list').append('<div class = "item">' + toAdd + '<div>');
+				});
+			$(document).on('click', '.item', function(){
+				$(this).remove();
+			});
+			});
+        </script>
+	</head>
+	<body>
+		<h2>To Do List</h2>
+		<p>Add items below. Once you've completed an item, click on it to remove.
+		<form name="checkListForm">
+			<input type="text" name="checkListItem"/>
+		</form>
+		<div id="button">Add!</div>
+		<br/>
+		<div class="list"></div>
+	</body>
+</html>
